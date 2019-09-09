@@ -13,19 +13,30 @@ import (
 	"bufio"
 	"fmt"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
 
 func main() {
 	var userString string
-	var s []int
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Printf("Please enter a string:\n")
-	userString, _ = reader.ReadString('\n')
-	userString = strings.ToLower(strings.Trim(userString, "\n"))
-	if userString == "x" {
+	var s = make([]int, 0, 3)
+	for userString != "x" {
+		reader := bufio.NewReader(os.Stdin)
+		fmt.Printf("Please enter an Integer:\n")
+		userString, _ = reader.ReadString('\n')
+		userString = strings.ToLower(strings.Trim(userString, "\n"))
+		if userString == "x" {
+			fmt.Println("Execution Finished!")
+			break
+		}
 		number, err := strconv.Atoi(userString)
+		if err != nil {
+			fmt.Println("Not an Integer!")
+		} else {
+			s = append(s, number)
+			sort.Ints(s)
+			fmt.Println("Current slice's content: ", s)
+		}
 	}
-
 }
