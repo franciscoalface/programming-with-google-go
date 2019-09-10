@@ -1,4 +1,5 @@
-## **Coursera's Programming with Google Go Specialization - University of California, Irvine**
+### **Coursera's Programming with Google Go Specialization**
+*University of California, Irvine*
 <br/><br/>
 1. **Getting started with Go**
 - Week 1: Getting Started with GO
